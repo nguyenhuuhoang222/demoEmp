@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Edit | Update Profile
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css")
+  body
+    section.container.mt-5
+      .row
+        .col-md-6.offset-md-3
+          h1.text-center.mb-4 Edit Profile
+          form(action=`/emp/update/${emp._id}`, method="post")
+            .form-group.mb-3
+              label(for="name") Name:
+              input.form-control(type="text", id="name", name="name", value=emp.name, required)
+            .form-group.mb-3
+              label(for="email") Email:
+              input.form-control(type="email", id="email", name="email", value=emp.email, required)
+            .form-group.mb-3
+              label(for="phone") Phone:
+              input.form-control(type="text", id="phone", name="phone", value=emp.phone, required)
+            .form-group.d-flex.justify-content-between
+              button.btn.btn-primary(type="submit") Update
+              a.btn.btn-secondary(href="/emp/details/") Cancel
